@@ -1,5 +1,5 @@
 import React, { forwardRef, useEffect, useState } from "react";
-import { useDebounce } from "../useDebounce";
+import { useDebounce } from "./CustomTimePicker/useDebounce";
 
 interface InputProps {
   className: string;

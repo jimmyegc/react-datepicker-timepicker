@@ -1,12 +1,11 @@
-import { CustomTimePicker } from "./components/CustomTimePicker"
+import { CustomTimePicker } from "./components/CustomTimePicker/CustomTimePicker";
 
-function App () {
-  return (<>
-    <div>App</div>
-    <CustomTimePicker />
+function App() {
+  return (
+    <>
+      <CustomTimePicker />
     </>
-  )
+  );
 }
 
-
-export default App
+export default App;
