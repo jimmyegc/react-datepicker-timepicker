@@ -1,9 +1,10 @@
 //import { RHFDatepicker } from "./components/RHFDatepicker/RHFDatepicker";
 
 import { useEffect, useState } from "react";
-import DatePicker from "react-datepicker";
+import DatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
+import { es } from "date-fns/locale/es";
+registerLocale("es", es);
 function App() {
   const [startDate, setStartDate] = useState<Date>(new Date());
   //const now = new Date()
@@ -38,23 +39,27 @@ function App() {
   }
 
   useEffect(() => {
-    const initialDate = localStorage.getItem("myDate")    
+    const initialDate = localStorage.getItem("myDate")            
     const myDate = new Date(initialDate)    
-    setStartDate(myDate)
+    setStartDate(myDate)    
   },[])
   
   return (<div>  
-    <h1>Datepicker</h1>        
-      UTC: toISOString
-      <pre>{JSON.stringify(startDate.toISOString())}</pre>      
-      Local: toLocaleString
-      <pre>
-      {JSON.stringify(startDate.toLocaleString())}</pre>      
-      Timestamp: now()
-      <pre>
-      {JSON.stringify(Date.now())}
-      </pre>
+    <h1>Datepicker</h1>     
+  {startDate != null && (<>
+UTC: toISOString
+<pre>{JSON.stringify(startDate.toISOString())}</pre>      
+Local: toLocaleString
+<pre>
+{JSON.stringify(startDate.toLocaleString())}</pre>      
+Timestamp: now()
+<pre>
+{JSON.stringify(Date.now())}
+</pre>
+</>)}    
+      
       <DatePicker 
+        locale="es"
         showIcon
         isClearable
         selected={startDate} 
