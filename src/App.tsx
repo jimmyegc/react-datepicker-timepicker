@@ -62,13 +62,13 @@ Timestamp: now()
         locale="es"
         showIcon
         isClearable
+        state={"Error"}
         selected={startDate} 
         timeInputLabel="Time:"
         dateFormat="MM/dd/yyyy h:mm aa"
-        showTimeInput
-        /* onSelect={()=> alert('sel')} */
+        showTimeInput        
         onSelect={handleChange}
-        onChange={handleChange} 
+        onChange={handleChange}         
       />
 
 
